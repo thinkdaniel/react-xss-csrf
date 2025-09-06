@@ -70,11 +70,7 @@ That means we can even add malicious links:
 
 This is where an attacker can inject malicious scripts and carry out a **Stored XSS** attack.
 
-The usual `<script>` tags are ignored by modern browsers for security reasons so this tag will not work.
-
-Scripts inserted via `innerHTML` are **inert** in most modern browsers and will not execute. However, attackers still have many other vectors (event handlers, `javascript:` URLs, SVG payloads, CSS `url()` with old engines, etc.).
-
-1. **SameSite Cookies**: Use `SameSite=Lax` by default. Be aware that `Lax` allows cookies on **top‑level GET navigations** (e.g., clicking a link), while `Strict` blocks those too and can break legitimate cross‑site flows.
+Scripts using `<script>`inserted via `innerHTML` are **inert** in most modern browsers and will not execute. However, attackers still have many other vectors (event handlers, `javascript:` URLs, SVG payloads, CSS `url()` with old engines, etc.).
 
 ```html
 <!-- Inline <script> added via innerHTML is inert in modern browsers -->
@@ -215,8 +211,6 @@ Restart the backend server, then logout and login the application again. Click t
 
 ## Additional Resources:
 
-PortSwigger Web Security Academy: Cross-Site Scripting (XSS)
-https://portswigger.net/web-security/cross-site-scripting
+- PortSwigger Web Security Academy: Cross-Site Scripting (XSS) https://portswigger.net/web-security/cross-site-scripting
 
-PortSwigger Web Security Academy: Cross-Site Request Forgery (CSRF)
-https://portswigger.net/web-security/csrf
+- PortSwigger Web Security Academy: Cross-Site Request Forgery (CSRF) https://portswigger.net/web-security/csrf
